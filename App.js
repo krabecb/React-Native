@@ -1,20 +1,27 @@
 import { StatusBar } from 'expo-status-bar';
 import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import { StyleSheet, Text, TouchableOpacity, View, Image, SafeAreaView, Button } from 'react-native';
 
 export default function App() {
+
+  console.log("App executed")
+
   return (
-    <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
+    <SafeAreaView style={styles.container}>
+      <Text>Hello world!</Text>
+      <TouchableOpacity onPress={() => console.log("Image tapped")}>
+        <Image source={require('./assets/favicon.png')} />
+      </TouchableOpacity>
+      <Button title="Click me!" onPress={() => console.log("Button tapped")} />
       <StatusBar style="auto" />
-    </View>
+    </SafeAreaView>
   );
 }
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#fff',
+    backgroundColor: 'pink',
     alignItems: 'center',
     justifyContent: 'center',
   },
